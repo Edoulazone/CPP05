@@ -6,98 +6,53 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:01:09 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/05/08 17:33:05 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/05/13 10:53:59 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
-	std::cout << "\033[33m" << std::endl << "Test ex01" << "\033[0m" << std::endl;
-
-	std::cout << "\033[33m" << std::endl << "Test too high and too low creation" << "\033[0m" << std::endl;
-	try
-	{
-		Bureaucrat Sleeper1("Fabinou", 1500);
-	}
-	catch(const std::exception &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-
-	try
-	{
-		Bureaucrat Sleeper2("Xavinou", -10);
-	}
-	catch(const std::exception &e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-
-	std::cout << "\033[33m" << std::endl << "Test increasing" << "\033[0m" << std::endl;
-	Bureaucrat bob("Bob", 2);
-	std::cout << bob;
-	try
-	{
-		bob.incrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	std::cout << bob;
-	
-	try
-	{
-	bob.incrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-	std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	std::cout << bob;
+	srand(time(NULL));
 
 
+	std::cout << "\033[34m" << std::endl << "Test ex02" << "\033[0m" << std::endl;
 
-	std::cout << "\033[33m" << std::endl << "Test decreasing" << "\033[0m" << std::endl;
-	Bureaucrat jk("Jean-Kevin", 149);
-	std::cout << jk;
-	try
-	{
-		jk.decrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	std::cout << jk;
-	
-	try
-	{
-	jk.decrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-	std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	std::cout << jk;
+	std::cout << "\033[33m" << std::endl << "Test ex02 ShrubberyCreationForm" << "\033[0m" << std::endl;
+	Bureaucrat Mr_Shrubby("Mr.Shrubby", 130);
+	ShrubberyCreationForm Shrubby_form("Hello");
+	std::cout << std::endl;
+	std::cout << Shrubby_form;
+	Mr_Shrubby.signForm(Shrubby_form);
+	std::cout << Shrubby_form;
+	Mr_Shrubby.execForm(Shrubby_form);
 
+	std::cout << "\033[33m" << std::endl << "Test ex02 RobotomyRequestForm" << "\033[0m" << std::endl;
+	RobotomyRequestForm Robo_form("I am a robo form");
+	Bureaucrat Mr_Robo("Mr.Robo", 45);
 
-	std::cout << "\033[33m" << std::endl << "Test ex01" << "\033[0m" << std::endl;
+	Mr_Robo.execForm(Robo_form);
+	Mr_Robo.signForm(Robo_form);
+	Mr_Robo.execForm(Robo_form);
+	Mr_Robo.execForm(Robo_form);
+	Mr_Robo.execForm(Robo_form);
 
-	Form id_form("ID FORM", 100, 90);
-	Bureaucrat mr_slow;
-	Bureaucrat mr_id("MR_ID", 100);
-	std::cout << id_form;
-	
-	mr_slow.signForm(id_form);
-	std::cout << id_form;
+	std::cout << "\033[33m" << std::endl << "Test ex02 PresidentialPardonForm" << "\033[0m" << std::endl;
+	PresidentialPardonForm President_form("I am a robo form");
+	Bureaucrat Mr_President("Mr.President", 5);
 
-	mr_id.signForm(id_form);
-	std::cout << id_form;
+	Mr_Robo.execForm(President_form);
+	Mr_Robo.signForm(President_form);
+
+	Mr_President.execForm(President_form);
+	Mr_President.signForm(President_form);
+	Mr_President.execForm(President_form);
 	
 	std::cout << std::endl;
 	return (0);

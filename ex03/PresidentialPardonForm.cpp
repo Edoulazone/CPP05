@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 17:44:21 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/05/13 11:07:56 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:06:33 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 
 
 void PresidentialPardonForm::doSomething() const {
-	std::cout << getName() << " has been pardoned by Edoudou" << std::endl;		
+	std::cout << getName() << " has been pardoned by Edoulazone, the ping pong dude" << std::endl;		
 }

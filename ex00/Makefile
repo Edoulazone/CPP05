@@ -6,7 +6,7 @@
 #    By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/07 17:01:12 by eschmitz          #+#    #+#              #
-#    Updated: 2025/05/07 18:27:05 by eschmitz         ###   ########.fr        #
+#    Updated: 2025/05/13 10:24:00 by eschmitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = killmenow
+NAME = imnothavingagoodtime
 
 all: $(NAME)
 
